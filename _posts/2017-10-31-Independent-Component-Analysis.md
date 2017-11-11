@@ -69,6 +69,6 @@ This suggests that the mathematical criterion we look for in the transformed dat
 
 ## References
 
-[1] Hastie, Tibshirani Friedman, _The Elements of Statistical Learning_
+[1] Hastie, Tibshirani, and Friedman, _The Elements of Statistical Learning_
 
-[2] Shlens, and the voices/microphones scenario is a common one used to motivate ICA (it's an example of a more general problem called blind-source separation)
+[2] Shlens, A Tutorial on Independent Component Analysis. arXiv:1404.2986v1. The voices/microphones scenario is a common one used to motivate ICA (it's an example of a more general problem called blind-source separation)
