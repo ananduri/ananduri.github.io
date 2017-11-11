@@ -2,7 +2,7 @@ Independent Component Analysis (ICA) is an unsupervised learning method, and if 
 
 ![ICA vs PCA](/images/ICA_PCA.png)
 
-Clearly PCA is hopeless at separating the two signals, whereas ICA recovers them perfectly. Given that PCA is usually presented alongside examples that clearly illustrate its utility, and make PCA itself seem magical, this example only made ICA seem even more mysterious and magical. Furthermore, I was wondering if it was related to PCA--their names couldn't just be a coincidence, right? So I decided to dive in, and write up my thoughts here. A friend recently told me "Muddled thoughts lead to muddled writing." Since the contrapositive is also true, writing this post will only help me understand ICA better.
+Clearly PCA is hopeless at separating the two signals, whereas ICA recovers them perfectly. Given that PCA is usually presented alongside examples that clearly illustrate its utility, and make PCA itself seem magical, this example only made ICA seem even more mysterious and magical. Furthermore, I was wondering if it was related to PCA--their names couldn't just be a coincidence, right? So I decided to dive in, and write up my thoughts here. 
 
 
 ## Motivation
@@ -52,12 +52,12 @@ As a side note: in many explanations of ICA, this criterion is stated as "assumi
 
 Let's make this criterion more concrete: in the scenario where we're trying to distinguish the voices of different people in the same room by using the measurements of various microphones scattered throughout the room, our criterion is that what Alice is saying has absolutely nothing to do with what Bob is saying. In other words, by paying attention to what Alice says, we are no better off in predicting what Bob is saying. The signal from one source doesn't help us predict the signal from another source--this is what is meant by "the sources are statistically independent".
 
-How can we make this into something mathematical we can code up? By using the language of probability. We're observing a signal $s_i^R$ from multiple sources $s_i^R$. (Since these are random variables, I'm putting an $R$ next to them.) At any given instant, the measurements of the signals from every source can be combined into a vector $\mathbf{s}$, where each element is one of the measurements of a signal $s_i$. Think of the vector $\mathbf{s}$ as being drawn from a multivariate probability distribution $P(\mathbf{s})$.
+How can we make this into something mathematical we can code up? By using the language of probability. We're observing a signal $s_i^R$ from multiple sources $s_i^R$. (Since these are random variables, I'm putting an $R$ next to them.) At any given instant, the signals from every source can be combined into a vector $\mathbf{s}^R$, where each element is one of the signals $s_i^R$. Think of the vector $\mathbf{s}^R$ as being drawn from a multivariate probability distribution $P(\mathbf{s}^R)$.
 
-This is the key point: if the sources were generating truly independent signals, then the multivariate probability distribution $P(\mathbf{s})$, from which you draw a vector consisting of all the measurements, would _factorize_ into the product of single-variable probability distributions for each source. Mathematically,
+Now, the key point: if the sources were generating truly independent signals, then the multivariate probability distribution $P(\mathbf{s}^R)$, from which you draw a vector consisting of all the measurements, would _factorize_ into the product of single-variable probability distributions for each source. Mathematically,
 
 \begin{equation}
-P(\mathbf{s}) = P_1(s_1^R) \cdot P_2(s_2^R) \cdot \cdots \cdot P_m(s_m^R)
+P(\mathbf{s}^R) = P_1(s_1^R) \cdot P_2(s_2^R) \cdot \cdots \cdot P_m(s_m^R)
 \end{equation}
 
 where each $P_i$ is the probability distribution you draw from when measuring the signal from source $i$, and where $m$ is the number of sources.
