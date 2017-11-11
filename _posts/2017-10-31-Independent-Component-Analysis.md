@@ -46,13 +46,15 @@ In other words, if we assume that the signal from every source is picked up by a
 
 then we can use ICA to tell apart the signals from different sources.
 
+---
+
 We haven't yet specified a criterion for the transformed representation. To do that, we'll make another innocuous-seeming assumption: that observing the signal from one source should tell us absolutely nothing about the signal from another source. Surprisingly, this requirement can be turned into the mathematical criterion we need. 
 
 As a side note: in many explanations of ICA, this criterion is stated as "assuming the sources are statistically independent" or even "maximizing the non-Gaussianity of the sources". To me, these descriptions are confusing. I think they come from looking at the math/code of ICA for too long, then trying to map back what you're doing into English. But you're really mapping into math-speak, which isn't understandable to most people, at least not before they've grokked the mathematics. But for them make the effort to grok the mathematics, they need to fully understand the motivation--it's a vicious cycle.
 
 Let's make this criterion more concrete: in the scenario where we're trying to distinguish the voices of different people in the same room by using the measurements of various microphones scattered throughout the room, our criterion is that what Alice is saying has absolutely nothing to do with what Bob is saying. In other words, by paying attention to what Alice says, we are no better off in predicting what Bob is saying. The signal from one source doesn't help us predict the signal from another source--this is what is meant by "the sources are statistically independent".
 
-How can we make this into something mathematical we can code up? By using the language of probability. We're observing a signal $s_i^R$ from multiple sources $s_i^R$. (Since these are random variables, I'm putting an $R$ next to them.) At any given instant, the signals from every source can be combined into a vector $\mathbf{s}^R$, where each element is one of the signals $s_i^R$. Think of the vector $\mathbf{s}^R$ as being drawn from a multivariate probability distribution $P(\mathbf{s}^R)$.
+How can we make this into something mathematical we can code up? By using the language of probability. We're observing a signa from multiple sources $s_i^R$. (Since these are random variables, I'm putting an $R$ next to them.) At any given instant, the signals from every source can be combined into a vector $\mathbf{s}^R$, where each element is one of the signals $s_i^R$. Think of the vector $\mathbf{s}^R$ as being drawn from a multivariate probability distribution $P(\mathbf{s}^R)$.
 
 Now, the key point: if the sources were generating truly independent signals, then the multivariate probability distribution $P(\mathbf{s}^R)$, from which you draw a vector consisting of all the measurements, would _factorize_ into the product of single-variable probability distributions for each source. Mathematically,
 
@@ -67,6 +69,6 @@ This suggests that the mathematical criterion we look for in the transformed dat
 
 ## References
 
-[1] HTF
+[1] Hastie, Tibshirani Friedman, _The Elements of Statistical Learning_
 
 [2] Shlens, and the voices/microphones scenario is a common one used to motivate ICA (it's an example of a more general problem called blind-source separation)
