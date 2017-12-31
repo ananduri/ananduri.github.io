@@ -17,7 +17,7 @@ unsupervised learning. ICA is not as straightforward, but that also means it
 seems even more like magic. Consider this picture from The Elements of
 Statistical Learning [1]:
 
-![ICA vs PCA](ICA_PCA.png)
+![ICA vs PCA](images/ICA_PCA.png)
 
 Clearly PCA is hopeless at separating the two signals, whereas ICA recovers them
 perfectly. Given that PCA is usually presented alongside examples that clearly
@@ -56,7 +56,7 @@ shapes. This is you doing unsupervised learning. You're using something simple,
 like the sound "ay", to stand for the up-pointing shape with a line through the
 middle.
 
-<img src="unsupervised1.png" alt="unsupervised1" style="width: 400px;"/>
+<img src="images/unsupervised1.png" alt="unsupervised1" style="width: 400px;"/>
 
 In first grade, let's say you need to write down your name. If you know that
 your name starts with the letter A, you're all set. The unsupervised learning
@@ -64,7 +64,7 @@ you did in kindergarten means that you know what visual data corresponds to the
 abstraction A--an up-pointing shape with a line through the middle. You draw
 this on your paper, and then loop through the rest of the letters in your name.
 
-<img src="unsupervised2.png" alt="unsupervised2" style="width: 240px;"/>
+<img src="images/unsupervised2.png" alt="unsupervised2" style="width: 240px;"/>
 
 ## PCA in Words
 
