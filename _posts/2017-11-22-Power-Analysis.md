@@ -1,8 +1,8 @@
 ---
 layout: post
-title: ""
+title: "Power Analysis"
 category: posts
-published: ""
+published: "put date"
 ---
 
 # [{{ page.title }}]({{ page.url }})
