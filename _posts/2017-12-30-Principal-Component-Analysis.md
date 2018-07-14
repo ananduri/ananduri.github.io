@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ""
+title: "Independent Component Analysis"
 category: posts
 published: ""
 ---
