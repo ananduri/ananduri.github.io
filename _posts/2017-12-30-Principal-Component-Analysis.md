@@ -5,9 +5,7 @@ category: posts
 published: ""
 ---
 
-# [{{ page.title }}]({{ page.url }})
-
-# Principle and Independent Component Analysis
+## Principle and Independent Component Analysis
 
 Independent Component Analysis (ICA) is an unsupervised learning method, and if
 you haven't heard of it, you've probably heard of its more famous cousin

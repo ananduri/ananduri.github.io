@@ -2,12 +2,9 @@
 layout: post
 title: "Power Analysis"
 category: posts
-published: "put date"
 ---
 
-# [{{ page.title }}]({{ page.url }})
-
-# Power Analysis
+## Power Analysis
 
 In statistics, power analysis refers to calculating how many runs of an
 experiment you need to perform if you want to detect an effect, given a lower

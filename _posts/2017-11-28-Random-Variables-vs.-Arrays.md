@@ -1,4 +1,3 @@
-# Random variables vs. arrays
 Let's go over the correspondence and distinction between _random variables_ and vectors. This is a detail that is glossed over in many treatments of ICA, and in explanations of statistical methods in general. It's not that it's tricky; I just haven't seen this relationship made explicit before, so I want to do that here.
 
 A _random variable_ is the fundamental abstraction of statistics. For the purposes of our discussion about ICA, think of them as numbers _drawn from some probability distribution_. By saying this, we've stipulated that: 
