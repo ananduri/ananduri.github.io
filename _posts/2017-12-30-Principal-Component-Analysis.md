@@ -183,9 +183,9 @@ Remember how we planned to transform the data: through applying linear
 transforms. Mathematically, this means that our transformed data can be
 represented as
 
-\begin{equation*}
+\begin{equation}
 \mathbf{S} = \mathbf{TX}.
-\end{equation*}
+\end{equation}
 
 $S$ is a matrix, analogous to the design matrix $X$, but where every row
 represents (we hope) one of the sources. We've taken the rows of $X$ and swapped
