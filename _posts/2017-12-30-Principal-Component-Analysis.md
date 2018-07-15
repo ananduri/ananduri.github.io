@@ -5,7 +5,7 @@ category: posts
 published: ""
 ---
 
-## Principle and Independent Component Analysis
+### Principle and Independent Component Analysis
 
 Independent Component Analysis (ICA) is an unsupervised learning method, and if
 you haven't heard of it, you've probably heard of its more famous cousin
@@ -26,7 +26,7 @@ decided to dive in and write up my thoughts here. But before we investigate ICA,
 we should familiarize ourselves with its simpler cousin, PCA.
 
 
-## Unsupervised learning
+### Unsupervised learning
 
 PCA is a form of unsupervised learning. I'm going to motivate PCA by first
 discussing the rationale for unsupervised learning.
@@ -64,7 +64,7 @@ this on your paper, and then loop through the rest of the letters in your name.
 
 <img src="../images/unsupervised2.png" alt="unsupervised2" style="width: 240px;"/>
 
-## PCA in Words
+### PCA in Words
 
 Let's try to get more concrete, and move from talking about unsupervised
 learning to PCA in particular. Above, I said unsupervised learning is a
@@ -154,7 +154,7 @@ math, it's not clear how to evaluate whether it's satisfied, much less look for
 a transformation that satisfies the criterion. We'll see how to accomplish those
 tasks when we get to implementing PCA and ICA.
 
-## PCA in Math
+### PCA in Math
 
 **Let's get even more concrete, and describe the procedure in terms of linear
 algebra.** We start with a bunch of $m$-dimensional data ($m$ was also the
@@ -379,7 +379,7 @@ Once $XX^T$ is diagonalized, we can use its eigenvectors to reassemble the
 matrix $T$. Then, all we need to do is multiply the design matrix $X$ by $T$,
 and we'll have recovered the sources, accomplishing our goal.
 
-## PCA in Code
+### PCA in Code
 
 In Python, the code to implement PCA is quite simple:
 
@@ -400,10 +400,9 @@ Let's take a look at an 2-dimensional example we can visualize.
 
 ---
 
-### References
+#### References
 
 [1] Hastie, Tibshirani, Friedman, The Elements of Statistical Learning
 
 [2] Shlens, A Tutorial on Independent Component Analysis, arXiv:1404.2986v1
 <hr><br />
-[Source Notebook File](https://github.com/gte620v/gte620v.github.io/tree/master/_ipynb/ICA.ipynb)

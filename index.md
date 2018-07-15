@@ -5,4 +5,4 @@ title: Arun Nanduri
 
 **Hi, I'm Arun Nanduri.**
 
-I'm a software engineer living in New York City.
+Software engineer living in New York City.
