@@ -15,7 +15,8 @@ unsupervised learning. ICA is not as straightforward, but that also means it
 seems even more like magic. Consider this picture from The Elements of
 Statistical Learning [1]:
 
-![ICA vs PCA](../../../../images/ICA_PCA.png)
+<!-- ![ICA vs PCA](../../../../images/ICA_PCA.png) -->
+<img src="../../../../images/ICA_PCA.png" alt="ICAvsPCA" style="width: 600px;"/>
 
 Clearly PCA is hopeless at separating the two signals, whereas ICA recovers them
 perfectly. Given that PCA is usually presented alongside examples that clearly
@@ -234,34 +235,34 @@ However, it turns out that it's a little complicated to use the assume that the
 sources are statistically independent. Let's just stipulate that our sources are
 linearly uncorrelated for now. Mathematically, this means that
 
-\begin{equation*}
+\begin{equation}
 \mathrm{Cov}(\mathbf{s}_i,\mathbf{s}_j) = 0
-\end{equation*}
+\end{equation}
 
 for every pair $$i, j$$ (except when $$i=j$$, which won't be 0 unless the signal
 from that source is itself 0). Can we use this equation to help us? Almost.
 Let's unpack the $$\mathrm{Cov}()$$ function:
 
-\begin{equation*}
+\begin{equation}
 \mathrm{Cov}(\mathbf{s}_i, \mathbf{s}_j) = \langle \mathbf{s}_i\mathbf{s}_j
 \rangle - \langle \mathbf{s}_i \rangle \langle \mathbf{s}_j \rangle
-\end{equation*}
+\end{equation}
 
 Now we'll fill in some values. We just said above that
 $$\mathrm{Cov}(\mathbf{s}_i,\mathbf{s}_j) = 0$$, so let's replace the left side
 with 0:
 
-\begin{equation*}
+\begin{equation}
 0 = \langle \mathbf{s}_i\mathbf{s}_j \rangle - \langle \mathbf{s}_i \rangle
 \langle \mathbf{s}_j \rangle
-\end{equation*}
+\end{equation}
 
 Rearranging, we can write
 
-\begin{equation*}
+\begin{equation}
 \langle \mathbf{s}_i\mathbf{s}_j \rangle = \langle \mathbf{s}_i \rangle \langle
 \mathbf{s}_j \rangle
-\end{equation*}
+\end{equation}
 
 Can we use this equation to help us develop an expression for $S$ or $T$? Yes.
 The $$\mathbf{s}_i$$ and $$\mathbf{s}_j$$ that appear above are just the different
@@ -271,15 +272,15 @@ only other equation we have is $$S = TX$$, so we need to get dot products betwee
 rows of $$S$$ to appear in this equation. Fortunately, that's exactly what right-
 multiplying by the transpose of a matrix does, so we'll do that to both sides.
 
-\begin{equation*}
+\begin{equation}
 SS^T = (TX)(TX)^T = (TX)(X^TT^T) = TXX^TT^T
-\end{equation*}
+\end{equation}
 
 Look at the term $$SS^T$$. Since $$S$$ is $$m\times n$$, $$SS^T$$ is an $$m\times m$$
 matrix where each entry is a dot product between two of the rows of $$S$$. In
 other words, the innards of $$SS^T$$ look like this:
 
-\begin{equation*}
+\begin{equation}
 SS^T =
 \begin{pmatrix}
 \mathbf{s}_1\bullet \mathbf{s}_1 & \mathbf{s}_1\bullet \mathbf{s}_2 &
@@ -288,31 +289,31 @@ SS^T =
 \mathbf{s}_3\bullet \mathbf{s}_1 & \mathbf{s}_3\bullet \mathbf{s}_2 &
 \mathbf{s}_3\bullet \mathbf{s}_3 & \cdots \\ \vdots & \vdots & \vdots & \ddots
 \end{pmatrix}
-\end{equation*}
+\end{equation}
 
 Now, what's the difference between $$\mathbf{s}_1 \cdot \mathbf{s}_2$$ and $$
 \langle \mathbf{s}_1\mathbf{s}_2 \rangle$$? To review, the former actually is a
 dot product, like in physics: it means you do element-wise multiplication of the
 two vectors, and add the results up to get one number.
 
-\begin{equation*}
+\begin{equation}
 \mathbf{s}_1 \bullet \mathbf{s}_2 = \sum_{i=1}^n \mathbf{s}_1[i] \cdot
 \mathbf{s}_2[i]
-\end{equation*}
+\end{equation}
 
 The latter is an average, like in statistics:
 
-\begin{equation*}
+\begin{equation}
 \langle \mathbf{s}_1 \mathbf{s}_2 \rangle = \frac{1}{n} \sum_{i=1}^n
 \mathbf{s}_1[i] \cdot \mathbf{s}_2[i]
-\end{equation*}
+\end{equation}
 
 The only difference between the two is an extra factor of $$\frac{1}{n}$$ in
 $$\langle \mathbf{s}_1 \mathbf{s}_2 \rangle$$. So we can convert $$\mathbf{s}_1
 \bullet \mathbf{s}_2$$ into $$\langle \mathbf{s}_1 \mathbf{s}_2 \rangle$$ by
 pulling out a factor of $$n$$:
 
-\begin{equation*}
+\begin{equation}
 SS^T = n \cdot
 \begin{pmatrix}
 \langle \mathbf{s}_1 \mathbf{s}_1\rangle & \langle \mathbf{s}_1
@@ -323,7 +324,7 @@ SS^T = n \cdot
 \mathbf{s}_2\rangle & \langle \mathbf{s}_3 \mathbf{s}_3\rangle & \cdots \\
 \vdots & \vdots & \vdots & \ddots
 \end{pmatrix}
-\end{equation*}
+\end{equation}
 
 Now we can use the equation $$\langle \mathbf{s}_i\mathbf{s}_j \rangle = \langle
 \mathbf{s}_i \rangle \langle \mathbf{s}_j \rangle$$ to simplify the matrix. But
@@ -331,7 +332,7 @@ remember that that equation is true only when $$i$$ and $$j$$ are different. Whe
 $$i$$ and $$j$$ are the same, this term becomes the average of the square of
 $$\mathbf{s}_i$$. Now the matrix looks like
 
-\begin{equation*}
+\begin{equation}
 SS^T = n \cdot
 \begin{pmatrix}
 \langle \mathbf{s}_1^2 \rangle & \langle \mathbf{s}_1\rangle \langle
@@ -342,7 +343,7 @@ SS^T = n \cdot
 \mathbf{s}_3 \rangle\langle \mathbf{s}_2\rangle & \langle \mathbf{s}_3^2 \rangle
 & \cdots \\ \vdots & \vdots & \vdots & \ddots
 \end{pmatrix}
-\end{equation*}
+\end{equation}
 
 Can we massage this matrix any further? Are there any further assumptions we can
 make about the data or the sources that will let us progress? Well, notice that
@@ -361,14 +362,14 @@ all the time.
 If we set all the means $$\langle \mathbf{s}_i \rangle$$ to 0, the off-diagonal
 terms in the matrix become 0. We end up with
 
-\begin{equation*}
+\begin{equation}
 SS^T = n \cdot
 \begin{pmatrix}
 \langle \mathbf{s}_1^2 \rangle & 0 & 0 & \cdots \\ 0 & \langle
 \mathbf{s}_2^2\rangle & 0 & \cdots \\ 0 & 0 & \langle \mathbf{s}_3^2 \rangle &
 \cdots \\ \vdots & \vdots & \vdots & \ddots
 \end{pmatrix} = TXX^TT^T
-\end{equation*}
+\end{equation}
 
 Notice that this matrix is diagonal. That means we can interpret T as a matrix
 that rotates $$XX^T$$ to a new basis where it becomes diagonal. In other words, to
@@ -398,7 +399,9 @@ def pca(X):
 
 Let's take a look at an 2-dimensional example we can visualize.
 
---- -->
+-->
+
+--- 
 
 ##### References
 

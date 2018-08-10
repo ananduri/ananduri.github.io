@@ -1,6 +1,7 @@
 _site/
-update.txt
 
 *.pyc
 
 *egg-info*
+
+commit.txt
