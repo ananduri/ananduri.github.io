@@ -4,7 +4,7 @@ title: "Power Analysis"
 category: posts
 ---
 
-## Power Analysis
+### Power Analysis
 
 In statistics, power analysis refers to calculating how many runs of an
 experiment you need to perform if you want to detect an effect, given a lower
@@ -24,7 +24,7 @@ won't be able to find statistically significant evidence for it. (Numbers here
 obviously made up but that's the kind of statements this analysis lets you
 make.)
 
-## Inputs and outputs
+#### Inputs and outputs
 
 Instead of medical experiments, let's confine ourselves to finding out whether a
 coin is biased or not [1]. To fully specify the problem, let's state precisely
@@ -51,7 +51,7 @@ supply with the suspected bias of the coin, $x$, and the number of flips in your
 experiment, $N$, and receive an output of a probability. Let's figure out that
 function.
 
-## Math
+#### Math
 
 We still need to state what we mean by "a coin's bias is $x$". There's more than
 one way to define this, but for this post $x$ will be the probability that the
@@ -220,7 +220,7 @@ def power(x, N):
     return sum(Pheads(h, N, x) for h in xrange(N + 1) if pvalue(h, N) < 0.05)
 {% endhighlight %}
 
-## Giving it a spin
+#### Giving it a spin
 
 If the coin isn't actually biased, and we observe 50 coin flips, we should
 almost never see evidence that would lead us to conclude the coin is rigged. The
@@ -261,7 +261,7 @@ print('probability of concluding rigged: {0}'.format(prob))
 So we'd almost certainly be able to see evidence for a bias by doing 50 flips,
 if the bias is as strong as a $3/4$ chance to land on one side of the coin.
 
-## Plots with fixed N
+#### Plots with fixed N
 
 Since we're now reasonably sure our code is correct, let's get a better sense of
 the behavior of this function by making plots. We'll first look at the power
@@ -1077,7 +1077,7 @@ is highest for the curve where $N=40$, which is not the skinniest or the fattest
 curve! That means the relationship between the height of the nadir and the width
 of the power curve, or $N$, may not be as simple as we might think.
 
-## Plots with fixed x
+#### Plots with fixed x
 
 Let's plot the value of the power when $x=0.5$ for different values of $N$. You
 can interpret this value as the probability that you'd conclude that you had a
@@ -2941,7 +2941,7 @@ to the interesting shape of the graph, but the fact the the power is essentially
 increasing with $N$ when $x=0.5$. This sounds good, until you realize that when
 $x=0.5$ the power is the probability of drawing the _wrong_ conclusion.
 
-## Minimum sample size needed
+#### Minimum sample size needed
 
 We can also answer the question: given a p-value, and a suspected minimum bias
 of the coin, what is the minimum value for the number of flips $N$ we need to
@@ -2968,7 +2968,7 @@ If we suspect there's at least an 70% chance the coin is biased to land on heads
 or tails, and we want to have an 80% chance of detecting this bias in an
 experiment, we'd have to flip the coin at least 49 times in our experiment.
 
-## Testing
+#### Testing
 
 Another nice thing about examining a simple situation like coin flipping is that
 we can do simulations to check our function. Since the output of our function is
