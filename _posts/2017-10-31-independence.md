@@ -16,8 +16,7 @@ Mathematically, the covariance between the two variables is a measure of their l
 
 Notice the structure of this expression: inside the $$\langle  \rangle$$, it's _linear_ in both variables. You could have other expressions like $$ \langle x^2y \rangle$$ or $$ \langle x^2 y^3 \rangle$$ that could be non-zero even as the covariance $$ \langle xy \rangle$$ is 0. As an example, consider the data for two variables shown in the picture.
 
-<!-- ![quadratic_correlation](../../../../images/quad_corr.png) -->
-<img src="../../../../images/quad_corr.png" alt="ICAvsPCA" style="width: 600px;"/>
+<img src="../../../../images/quad_corr.png" alt="ICAvsPCA" style="width: 400px;"/>
 
 The data points for $$x$$ form a line, and the data points for $$y$$ form a parabola. The two variables are not linearly correlated, because on the left, $$y$$ goes _down_ as $$x$$ goes up, but on the right, $$y$$ goes _up_ as $$x$$ goes up.If you calculate $$ \langle xy \rangle$$, the first half of the terms $$\sum_{i=1}^{n} x_i y_i$$ would cancel the second half of the terms. But the expression 
 
