@@ -296,17 +296,15 @@ Now, what's the difference between $$\mathbf{s}_1 \cdot \mathbf{s}_2$$ and $$
 dot product, like in physics: it means you do element-wise multiplication of the
 two vectors, and add the results up to get one number.
 
-\begin{equation}
-\mathbf{s}_1 \bullet \mathbf{s}_2 = \sum_{i=1}^n \mathbf{s}_1[i] \cdot
-\mathbf{s}_2[i]
-\end{equation}
+$$\mathbf{s}_1 \bullet \mathbf{s}_2 = \sum_{i=1}^n \mathbf{s}_1[i] \cdot
+\mathbf{s}_2[i]$$
 
 The latter is an average, like in statistics:
 
-\begin{equation}
+$$
 \langle \mathbf{s}_1 \mathbf{s}_2 \rangle = \frac{1}{n} \sum_{i=1}^n
 \mathbf{s}_1[i] \cdot \mathbf{s}_2[i]
-\end{equation}
+$$
 
 The only difference between the two is an extra factor of $$\frac{1}{n}$$ in
 $$\langle \mathbf{s}_1 \mathbf{s}_2 \rangle$$. So we can convert $$\mathbf{s}_1
