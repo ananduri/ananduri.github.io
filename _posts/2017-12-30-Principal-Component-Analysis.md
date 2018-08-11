@@ -282,13 +282,13 @@ other words, the innards of $$SS^T$$ look like this:
 
 \begin{equation}
 SS^T =
-\begin{bmatrix}
+\begin{pmatrix}
 \mathbf{s}_1\bullet \mathbf{s}_1 & \mathbf{s}_1\bullet \mathbf{s}_2 &
-\mathbf{s}_1\bullet \mathbf{s}_3 & \cdots \\ \mathbf{s}_2\bullet \mathbf{s}_1 &
-\mathbf{s}_2\bullet \mathbf{s}_2 & \mathbf{s}_2\bullet \mathbf{s}_3 & \cdots \\
+\mathbf{s}_1\bullet \mathbf{s}_3 & \cdots \\\ \mathbf{s}_2\bullet \mathbf{s}_1 &
+\mathbf{s}_2\bullet \mathbf{s}_2 & \mathbf{s}_2\bullet \mathbf{s}_3 & \cdots \\\
 \mathbf{s}_3\bullet \mathbf{s}_1 & \mathbf{s}_3\bullet \mathbf{s}_2 &
-\mathbf{s}_3\bullet \mathbf{s}_3 & \cdots \\ \vdots & \vdots & \vdots & \ddots
-\end{bmatrix}
+\mathbf{s}_3\bullet \mathbf{s}_3 & \cdots \\\ \vdots & \vdots & \vdots & \ddots
+\end{pmatrix}
 \end{equation}
 
 Now, what's the difference between $$\mathbf{s}_1 \cdot \mathbf{s}_2$$ and $$
@@ -315,15 +315,15 @@ pulling out a factor of $$n$$:
 
 \begin{equation}
 SS^T = n \cdot
-\begin{bmatrix}
+\begin{pmatrix}
 \langle \mathbf{s}_1 \mathbf{s}_1\rangle & \langle \mathbf{s}_1
-\mathbf{s}_2\rangle & \langle \mathbf{s}_1 \mathbf{s}_3\rangle & \cdots \\
+\mathbf{s}_2\rangle & \langle \mathbf{s}_1 \mathbf{s}_3\rangle & \cdots \\\
 \langle \mathbf{s}_2 \mathbf{s}_1\rangle & \langle \mathbf{s}_2
-\mathbf{s}_2\rangle & \langle \mathbf{s}_2 \mathbf{s}_3\rangle & \cdots \\
+\mathbf{s}_2\rangle & \langle \mathbf{s}_2 \mathbf{s}_3\rangle & \cdots \\\
 \langle \mathbf{s}_3 \mathbf{s}_1\rangle & \langle \mathbf{s}_3
-\mathbf{s}_2\rangle & \langle \mathbf{s}_3 \mathbf{s}_3\rangle & \cdots \\
+\mathbf{s}_2\rangle & \langle \mathbf{s}_3 \mathbf{s}_3\rangle & \cdots \\\
 \vdots & \vdots & \vdots & \ddots
-\end{bmatrix}
+\end{pmatrix}
 \end{equation}
 
 Now we can use the equation $$\langle \mathbf{s}_i\mathbf{s}_j \rangle = \langle
@@ -334,15 +334,15 @@ $$\mathbf{s}_i$$. Now the matrix looks like
 
 \begin{equation}
 SS^T = n \cdot
-\begin{bmatrix}
+\begin{pmatrix}
 \langle \mathbf{s}_1^2 \rangle & \langle \mathbf{s}_1\rangle \langle
 \mathbf{s}_2\rangle & \langle \mathbf{s}_1 \rangle \langle \mathbf{s}_3\rangle &
-\cdots \\ \langle \mathbf{s}_2\rangle \langle \mathbf{s}_1\rangle & \langle
+\cdots \\\ \langle \mathbf{s}_2\rangle \langle \mathbf{s}_1\rangle & \langle
 \mathbf{s}_2^2\rangle & \langle \mathbf{s}_2\rangle \langle \mathbf{s}_3\rangle
-& \cdots \\ \langle \mathbf{s}_3 \rangle \langle \mathbf{s}_1\rangle & \langle
+& \cdots \\\ \langle \mathbf{s}_3 \rangle \langle \mathbf{s}_1\rangle & \langle
 \mathbf{s}_3 \rangle\langle \mathbf{s}_2\rangle & \langle \mathbf{s}_3^2 \rangle
-& \cdots \\ \vdots & \vdots & \vdots & \ddots
-\end{bmatrix}
+& \cdots \\\ \vdots & \vdots & \vdots & \ddots
+\end{pmatrix}
 \end{equation}
 
 Can we massage this matrix any further? Are there any further assumptions we can
@@ -364,11 +364,11 @@ terms in the matrix become 0. We end up with
 
 \begin{equation}
 SS^T = n \cdot
-\begin{bmatrix}
-\langle \mathbf{s}_1^2 \rangle & 0 & 0 & \cdots \\ 0 & \langle
-\mathbf{s}_2^2\rangle & 0 & \cdots \\ 0 & 0 & \langle \mathbf{s}_3^2 \rangle &
-\cdots \\ \vdots & \vdots & \vdots & \ddots
-\end{bmatrix} = TXX^TT^T
+\begin{pmatrix}
+\langle \mathbf{s}_1^2 \rangle & 0 & 0 & \cdots \\\ 0 & \langle
+\mathbf{s}_2^2\rangle & 0 & \cdots \\\ 0 & 0 & \langle \mathbf{s}_3^2 \rangle &
+\cdots \\\ \vdots & \vdots & \vdots & \ddots
+\end{pmatrix} = TXX^TT^T
 \end{equation}
 
 Notice that this matrix is diagonal. That means we can interpret T as a matrix
