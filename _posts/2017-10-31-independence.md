@@ -30,6 +30,6 @@ Getting back to the main point, you can see now why "linear correlation" is a ve
 
 Flipping our terms around, we can see that statistical independence is a much stronger requirement than linearly uncorrelated variables--it implies that correlations of all kinds are 0, whereas "linearly uncorrelated" just means that the expression $$ \langle xy \rangle$$ is 0, and says nothing about higher-order expressions. Look at the left column in the diagram. The ^ implies that "linearly correlated" is a stronger (more specific) claim than "statistically dependent". But when you negate both terms, the specific/general relationship gets reversed. So on the right, "statistically independent" is a stronger claim and "linearly uncorrelated".
 
-<img src="../../../../images/relationships.png" alt="relationships" style="width: 400px;"/>
+<img src="../../../../images/relationships.png" alt="relationships" style="width: 550px;"/>
 
 This is why we specify "statistical independence" in our criterion for ICA, instead of just "uncorrelated". (What happens if you merely stipulate that the transformed variables are linearly uncorrelated? You get PCA!)
